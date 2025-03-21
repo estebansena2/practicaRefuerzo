@@ -1,0 +1,82 @@
+<mxfile host="65bd71144e">
+    <diagram id="XMBTW3hYGv_CN-KtDHNt" name="Page-1">
+        <mxGraphModel dx="1134" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Clase Usuario" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="400" width="200" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="- id: int&#10;- nombre: String&#10;- email: String&#10;- contraseña: String&#10;- dirección: String&#10;- teléfono: String&#10;- tipo: String&#10;_____________________________&#10;&#10;+ registrarse()&#10;+ iniciarSesion()&#10;+ editarPerfil()&#10;+ cambiarContraseña()&#10;+ verHistorial()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2">
+                    <mxGeometry y="26" width="200" height="254" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Clase Servicio" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="400" width="330" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="- id: int&#10;- nombre: String&#10;- descripción: String&#10;- tarifa: float&#10;- categoría: String&#10;- profesional: Profesional&#10;- disponibilidad: Map&lt;Date, Boolean&gt;&#10;___________________________________&#10;+ actualizarDisponibilidad(fecha: Date, disponible: Boolean)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="6">
+                    <mxGeometry y="26" width="330" height="144" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Clase Reseña" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="400" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="- id: int&#10;- cliente: Cliente&#10;- servicio: Servicio&#10;- calificación: int&#10;- comentario: String&#10;- fecha: Date&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="10">
+                    <mxGeometry y="26" width="140" height="114" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Clase Cita" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="750" y="580" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="- id: int&#10;- profesional: Profesional&#10;- cliente: Cliente&#10;- servicio: Servicio&#10;- fecha: Date&#10;- hora: Time&#10;- estado: String " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="14">
+                    <mxGeometry y="26" width="170" height="134" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Clase Administrador" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="340" y="125" width="380" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="+ gestionarUsuarios()&#10;+ gestionarProfesionales()&#10;+ moderarReseñas()&#10;+ generarReportes(tipo: String)&#10;+ enviarNotificaciones(mensaje: String, destinatarios: List&lt;Usuario&gt;)&#10;+ gestionarCategorias()&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="18">
+                    <mxGeometry y="26" width="380" height="244" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Clase Cliente" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="580" width="240" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="- favoritos: List&lt;Servicio&gt;&#10;_________________________&#10;+ buscarServicios(filtros:  String)&#10;+ verDetallesServicio(servicio: Servicio)&#10;+ dejarReseña&#10;+ marcarFavorito&#10;+ enviarSolicitudicio&#10;+ contactarProfesional(profesional) " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="22">
+                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Clase Profesional" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="130" width="290" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="- servicios: List&lt;Servicio&gt;&#10;- agenda: List&lt;Cita&gt;&#10;______________________________&#10;+ registrarServicio(servicio: Servicio)&#10;+ actualizarServicio(servicio: Servicio)&#10;+ eliminarServicio(servicio: Servicio)&#10;+ responderSolicitud(solicitud: Solicitud)&#10;+ gestionarAgenda()&#10;+ verReseñas()&#10;+ actualizarTarifas(servicio: Servicio, tarifa: float)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="26">
+                    <mxGeometry y="26" width="290" height="234" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Clase Notificación" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="580" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="- id: int&#10;- mensaje: String&#10;- destinatario: Usuario&#10;- fecha: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="31">
+                    <mxGeometry y="26" width="140" height="114" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Clase Solicitud" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="400" width="140" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="- id: int&#10;- cliente: Cliente&#10;- servicio: Servicio&#10;- mensaje: String&#10;- fecha: Date&#10;- estado: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="35">
+                    <mxGeometry y="26" width="140" height="114" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Clase Categoría" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="700" width="140" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="- id: int&#10;- nombre: String&#10;- descripción: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="41">
+                    <mxGeometry y="26" width="140" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Clase SuscripcionVIP" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="810" width="260" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="- id: int&#10;- profesional: Profesional&#10;- fechaInicio: Date&#10;- fechaFin: Date&#10;- estado: String (Activa, Inactiva, Cancelada)&#10;_____________________________________&#10;+ activar()&#10;+ cancelar()&#10;+ renovar()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="57">
+                    <mxGeometry y="26" width="260" height="154" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="Clase Pago" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#a20025;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="848" width="170" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="- id: int&#10;- usuario: Usuario&#10;- monto: float&#10;- fecha: Date&#10;- metodo: String&#10;________________________&#10;+ procesarPago()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="61">
+                    <mxGeometry y="26" width="170" height="154" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
